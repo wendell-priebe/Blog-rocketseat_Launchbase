@@ -1,0 +1,46 @@
+{% extends "layout.njk" %}
+{% block title%}
+    <title>Blog-Rocketseat</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <div id="wrapper">
+        <h1>Conteúdos</h1>
+    </div>
+    <section class="cards link_none">
+
+        {% for post in posts %}
+        <div class="card" id="{{post.id}}">
+            <div class="card_image">
+                <img src="{{post.img}}" alt="Imagem de {{post.title}}">
+            </div>
+            <div class="card_content">
+                <p>{{post.title}}</p>
+                <p>{{post.for}}</p>
+            </div>
+            <div class="card_info">
+                <p><img class="imgpng" src="time.png" alt="">{{post.time}}</p>
+                <p class="card_mode">{{post.mod}}</p>
+            </div>
+        </div>
+        {% endfor %}
+
+    </section>
+    <div class="modal_overlay">
+        <div class="modal">
+            <a class="icon_modal">
+                <i class="material-icons" id="close">close</i>
+                <i class="material-icons" id="open_in_full">open_in_full</i>
+            </a>
+            <div class="modal_content">
+                <!-- video aqui -->
+                <iframe src="" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/script.js"></script>
+    
+{% endblock %}

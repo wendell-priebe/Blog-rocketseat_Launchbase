@@ -1,0 +1,23 @@
+{% extends 'layout.njk'%}
+
+{% block title %}
+<title>Sobre-Rocketseat</title>
+{% endblock %}
+
+{% block content %}
+    <div id="wrapper">
+        <img src="{{about.avatar_url}}" alt="{{about.name}}" id="logo">
+        <h1>{{about.name}}</h1>
+        <h2>{{about.title}}</h2>
+        <p>
+            {{about.description}}
+        </p>
+        <ul id="tecnologias">
+
+            {% for technology in about.technologys %}
+            <li>{{technology.name}}</li>
+            {% endfor %}
+
+        </ul>
+    </div>
+{% endblock %}

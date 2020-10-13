@@ -1,0 +1,33 @@
+{% extends "layout.njk" %}
+{% block title%}
+    <title>Canal-Rocketseat</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <div id="wrapper">
+        <h1>Videos</h1>
+    </div>
+    <section class="cards link_none">
+
+        {% for video in videos %}
+        <div class="script_video" id="{{video.id}}">
+            <div class="card_image_video">
+                <img src="{{video.img}}" alt="Imagem de {{video.title}}">
+            </div>
+            <div class="card_content">
+                <p>{{video.title}}</p>
+            </div>
+            <div class="card_info">
+                <p>por {{video.autor}}</p>
+                <p class="card_mode">{{video.time}}</p>
+            </div>
+        </div>
+        {% endfor %}
+
+    </section>
+
+    <script src="/script.js"></script>
+    
+{% endblock %}
